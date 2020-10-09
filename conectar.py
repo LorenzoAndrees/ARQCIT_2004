@@ -9,6 +9,6 @@ print("Conectado al bus")
 
 while True:
     mens = input("Mensaje desde Cliente a Servidor >> ")
-    obj.send(mens)
+    obj.sendto(mens.encode('utf-8'), (host, port))
 obj.close()
 print("Conexión cerrada")
