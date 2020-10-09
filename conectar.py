@@ -8,7 +8,7 @@ obj.connect((host, port))
 print("Conectado al bus")
 
 while True:
-    mens = raw_input("Mensaje desde Cliente a Servidor >> ")
+    mens = input("Mensaje desde Cliente a Servidor >> ")
     obj.send(mens)
 obj.close()
 print("Conexión cerrada")
