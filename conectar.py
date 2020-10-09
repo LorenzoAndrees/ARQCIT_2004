@@ -1,9 +1,14 @@
-from socket import create_connection
+import socket
 
-# Conectar al servidor.
-with create_connection(("127.0.0.1", 5000)) as conn:
-    print("Conectado al bus.")
-    # Enviar datos.
-    conn.sendall(b"Hola profe!")
+host = '127.0.0.1'
+port = 5000
 
-print("Conexión cerrada.")
+obj = socket.socket()
+obj.connect((host, port))
+print("Conectado al bus")
+
+while True:
+    mens = raw_input("Mensaje desde Cliente a Servidor >> ")
+    obj.send(mens)
+obj.close()
+print("Conexión cerrada")
